@@ -1,0 +1,29 @@
+<div>
+    <!-- counter -->
+    <section>
+    <h1>mini app</h1>
+    <h2>signal counter</h2>
+    <h3>{{ count() }}</h3>
+    <button (click)="increaseCounter()">+1</button>
+    <button (click)="decreaseCounter()">-1</button>
+    <button (click)="resetCounter()">reset</button>
+    </section>
+<!-- api users -->
+    <section>
+        <h2>users from api</h2>
+        @if (loading){
+            <p>loading users..</p>
+        }
+        @if (error){
+            <p>{{ error }}</p>
+        }
+        @if (!loading && !error){
+            @for (user of users;track user.id){
+                <h3>{{ user.name }}</h3>
+                <p><strong>email:</strong>{{user.email}}</p>
+                <p><strong>phone:</strong>{{user.phone}}</p>
+            }
+        }
+    </section>
+
+</div>

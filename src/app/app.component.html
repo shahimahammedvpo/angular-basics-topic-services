@@ -1,0 +1,19 @@
+<app-t7></app-t7>
+<!-- defer -->
+    <section>
+        <h2>t7</h2>
+        @defer(on viewport){
+            <p>content is this</p>
+        }
+        @placeholder {
+          <p>scroll down to the component...</p>
+        }
+        @loading (minimum 4s) {
+          <p>loading component....</p>
+        }
+        @error {
+          <p>could not load..</p>
+        }
+
+    </section>
+    
